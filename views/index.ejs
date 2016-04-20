@@ -1,0 +1,119 @@
+<md-content>
+<div layout="column" class="">
+<!--   Nav bar -->
+  <div layout="column" class="" ng-controller="NavCtrl">
+    <md-toolbar class="md-accent" md-scroll-shrink="">
+      <div class="md-toolbar-tools themeAlt">
+        <md-button ng-click="openLeftMenu()" class="md-icon-button" aria-label="Settings">
+          <md-icon>menu</md-icon>
+        </md-button>
+        <h2>
+          <span>
+            <a ng-class="themeAlt" href="/"><md-icon>check</md-icon>OutList</a>
+          </span>
+        </h2>
+        <span flex=""></span>
+        <!-- Navs hidden on mobile -->
+        <md-button  ng-show="currentUser" href="/list" class="" hide-sm>
+          <md-icon>public</md-icon>
+          Get Inspired
+        </md-button>
+        <md-button  ng-show="currentUser" href="/profile" class="themeAlt" hide-sm>
+        <md-icon>account_circle</md-icon>
+        Profile
+        </md-button>
+        <md-button ng-click="showLogin()" href="" ng-hide="currentUser" class=" themeAlt" hide-sm>
+          <md-icon>account_circle</md-icon>
+          Login
+        </md-button>
+        <md-button ng-click="logout()" href="" ng-show="currentUser" class="md-flat themeAlt" hide-sm>
+          <md-icon class="themeAlt">lock</md-icon>
+          {{currentUser.currentUserName}} Logout
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <!-- Mobile device side nav -->
+    <md-sidenav md-component-id="left" class="md-sidenav-left">
+
+     <!-- currentUser Profile show if currentUser -->
+      <md-list ng-show="currentUser" id="sideNavProfile">
+         <br><br>
+        <md-list-item class="md-2-line">
+          <img ng-src="{{ currentUser.image }}" class="md-avatar">
+          <div class="md-list-item-text">
+            <h3>{{ currentUser.userName }}</h3>
+            <h4>{{ currentUser.email }}</h4>
+          </div>
+        </md-list-item>
+        <br><br>
+      </md-list>
+
+
+      <!-- Login/signup hide if currentUser -->
+      <md-list ng-hide="currentUser">
+      <md-list-item class="md-2-line">
+        <md-button ng-click="showBottomSheet() || openLeftMenu()" ng-hide="currentUser" class="md-flat md-primary">
+          <md-icon>account_circle</md-icon>
+          Login
+        </md-button>
+      </md-list-item>
+      <md-list-item class="md-2-line">
+        <md-button ng-click="showSignupMobile() || openLeftMenu()" ng-hide="currentUser" class="md-flat md-accent">
+          <md-icon>person_add</md-icon>
+          Sign Up
+        </md-button>
+      </md-list-item>
+      <md-list-item class="md-2-line">
+        <md-button ng-click="openLeftMenu()" ng-hide="currentUser" class="md-flat md-warn">
+          <md-icon>remove_circle</md-icon>
+          Cancel
+        </md-button>
+      </md-list-item>
+
+      </md-list>
+
+      <!-- currentUser Nav list show if currentUser -->
+      <md-list ng-show="currentUser" >
+
+        <md-list-item class="md-2-line">
+          <md-button ng-click="openLeftMenu()" href="/list"class="md-flat">
+            <div class="md-list-item-text">
+              <md-icon>public</md-icon>
+              Get Inspired
+            </div>
+          </md-button>
+        </md-list-item>
+
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line">
+          <md-button ng-click="openLeftMenu()" href="/profile" class="md-flat">
+            <div class="md-list-item-text">
+              <md-icon>account_circle</md-icon>
+              Profile
+            </div>
+          </md-button>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line">
+          <md-button ng-click="logout()" ng-show="currentUser" href="" class="md-flat">
+            <div class="md-list-item-text">
+              <md-icon>lock</md-icon>
+              Logout
+            </div>
+          </md-button>
+        </md-list-item>
+      </md-list>
+
+    </md-sidenav>
+  </div>
+
+  <md-progress-linear md-mode="indeterminate" ng-if="$root.loading" hide-sm></md-progress-linear>
+  <md-progress-circular md-mode="indeterminate" ng-if="$root.loading" hide-gt-sm></md-progress-circular>
+
+
+  <ng-view></ng-view>
+
+</div>
+</md-content>
+

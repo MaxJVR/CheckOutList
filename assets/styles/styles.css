@@ -1,0 +1,253 @@
+body {
+  background-color: #ECEFF1;
+}
+
+/* LANDING PAGE */
+#landingPage {
+  background-color: #ECEFF1;
+}
+
+#titleWrapper {
+  background-image: url('/images/starry-sky.gif');
+  background-size: cover;
+  height: 100vh;
+}
+
+#titleOne {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+}
+
+#titleTwo {
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+}
+
+#titleThree {
+  animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+}
+
+#titleFour {
+  animation-delay: 4s;
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+}
+
+.panelAniFix {
+  height: 1px;
+}
+
+.panelLeftAni{
+  height: 400px;
+  width: 400px;
+}
+.panelRightAni{
+  height: 400px;
+  width: 400px;
+}
+
+#panelOne {
+/*  background-color: rgb(255,215,64);*/
+background-color: #ECEFF1;
+}
+
+#panelTwo {
+/*  background-color: #006DB0;*/
+background-color: #ECEFF1;
+}
+
+#panelThree {
+/*  background-color: #009E60;*/
+background-color: #ECEFF1;
+}
+
+#panelFour {
+/*background-color: rgb(244,67,54);*/
+background-color: #ECEFF1;
+}
+
+#checkoutExample{
+  height: 300px;
+  width: 300px;
+  border-style: solid;
+  border-color: white;
+}
+
+.checkoutsExample {
+  height: 300px;
+}
+
+.checkoutsExampleCard {
+  height: 350px;
+  width: 300px;
+}
+
+.checkoutsExampleImg {
+  max-height: 168px;
+}
+
+#signupWrapper{
+  background-image: url('/images/ocean-fly-by.gif');
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
+
+#signupFooter {
+  background-color: rgb(255,215,64);
+  min-height:100px;
+  text-align: center;
+/*  border-style: solid;
+  border-color: white;*/
+}
+
+#socialBtnFacebook{
+ /* background-color: #3b5998;*/
+ background-color: #FFFFFF;
+}
+
+#socialBtnLinkedin {
+/*  background-color: #007bb5;*/
+background-color: #FFFFFF;
+}
+
+#socialBtnGithub{
+/*  background-color: #999999;*/
+background-color: #FFFFFF;
+}
+
+/* NAV PAGE */
+.nav {
+  background-color: #333;
+}
+
+#sideNavProfile{
+  background-color: #333;
+}
+#sideNavProfile h3 {
+  color: white;
+}
+
+#sideNavProfile h4 {
+  color: white;
+}
+
+/* PROFILE PAGE */
+#profilePage {
+  background-color: #ECEFF1;
+/*  min-height: 700px;*/
+/*  height: 100%;*/
+  min-height:100%;
+/*  height: 100vh;*/
+}
+
+#profileWhiteframe {
+/*  border-radius: 50%;*/
+  height: 200px;
+/*  width: 200px;*/
+  border-style: solid;
+  border-color: white;
+}
+
+#profilePic {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+}
+
+.profileCheckouts {
+  height: 400px;
+  width: 400px;
+  border-style: solid;
+  border-color: white;
+}
+
+.profileCheckoutOptions {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+ /* background: rgba(34,34,34,0.75);*/
+  background: rgba(255, 255, 255, 0.75);
+}
+
+md-checkbox .md-icon {
+  transform:scale(1.7, 1.7);
+  border-color: #ECEFF1;
+}
+.profileModalPics {
+  height: 200px;
+  width: 200px;
+}
+
+/* LIST PAGE */
+
+#listPage {
+  /*background-color: #009E60;*/
+  background-color: #ECEFF1;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+#checkOutCard {
+  width: 338.281px;
+}
+
+#checkoutWhiteframe {
+  height: 400px;
+/*  width: 400px;*/
+/*  border-style: solid;
+  border-color: white;*/
+}
+
+/* ANGULAR MATERIAL */
+
+md-whiteframe {
+  background: white;
+}
+
+md-dialog {
+  max-height: 600px;
+  max-width: 600px;
+}
+
+md-dialog-container {
+  position: fixed;
+}
+
+md-bottom-sheet-container {
+position: fixed;
+  bottom: 0;
+}
+
+md-backdrop {
+  position: fixed;
+}
+
+.theme {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+ /* background: rgba(34,34,34,0.75);*/
+  background: rgba(255, 255, 255, 0.75);
+/*  border-style: solid;*/
+  border-color: white;
+}
+
+.themeAlt {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/*404 Page*/
+#fourZeroFour {
+  position: relative;
+  top: -67px;
+  background-image: url('/images/starwars404.png'); ;
+  background-size: 100% 100%;
+  background-color: black;
+  height: 105vh;
+}
+
+

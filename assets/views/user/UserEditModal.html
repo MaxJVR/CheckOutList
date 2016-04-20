@@ -1,0 +1,38 @@
+<md-dialog>
+  <md-dialog-content class="">
+    <form name="editUserForm" ng-submit="editUser()">
+    <h3>Edit Your Account</h3>
+    <div layout="column">
+      <div layout="row">
+        <md-input-container>
+          <md-icon>account_circle</md-icon>
+          <input type="text" ng-model="user.userName" md-maxlength="20" placeholder="username">
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container>
+          <md-icon>mood</md-icon>
+          <textarea type="text" ng-model="user.about" md-maxlength="200" placeholder="about me"></textarea>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container>
+          <md-icon>face</md-icon>
+          <input type="text" ng-model="user.image" placeholder="profile image url" >
+        </md-input-container>
+      </div>
+
+<!--       <md-input-container>
+        <md-icon>event_available</md-icon>
+        <input type="text" ng-model="list.name" md-maxlength="50" placeholder="list name">
+      </md-input-container> -->
+
+    </div>
+      <br>
+      <div class="md-actions" layout="row">
+        <md-button ng-click="close()" class="md-flat md-warn">Cancel</md-button>
+        <md-button ng-click="close()" type="submit" ng-class="editUserForm" class="md-flat md-primary">Update</md-button>
+      </div>
+    </form>
+  </md-dialog-content>
+</md-dialog>

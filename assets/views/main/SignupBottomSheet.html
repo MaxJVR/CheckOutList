@@ -1,0 +1,58 @@
+<md-bottom-sheet class="md-list">
+  <form name="signupForm" ng-submit="signup()">
+    <h3>Create Your Account</h3>
+    <div layout="column">
+    <div layout="row">
+      <md-input-container>
+        <md-icon>account_circle</md-icon>
+        <input type="text" ng-model="userName" md-maxlength="20" placeholder="username" required>
+      </md-input-container>
+      <md-input-container>
+        <md-icon>email</md-icon>
+        <input type="email" ng-model="email" placeholder="email" required>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container>
+        <md-icon>vpn_key</md-icon>
+        <input type="password" ng-model="password" placeholder="password" required>
+      </md-input-container>
+      <md-input-container>
+        <md-icon>lock</md-icon>
+        <input type="password" placeholder="confirm password" required>
+      </md-input-container>
+    </div>
+    <!-- <div layout="row">
+      <md-input-container>
+        <md-icon>person</md-icon>
+        <input type="text" ng-model="firstName" md-maxlength="20" placeholder="first name" required>
+      </md-input-container>
+      <md-input-container>
+        <md-icon>person_add</md-icon>
+        <input type="text" ng-model="lastName" md-maxlength="20" placeholder="last name" required>
+      </md-input-container>
+    </div>
+      <md-input-container>
+        <md-icon>mood</md-icon>
+        <textarea type="text" ng-model="about" md-maxlength="200" placeholder="about me" required></textarea>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon>face</md-icon>
+        <input type="text" ng-model="image" placeholder="profile image url" >
+      </md-input-container>
+
+
+      <md-input-container>
+        <md-icon>event_available</md-icon>
+        <input type="text" ng-model="list.name" md-maxlength="50" placeholder="list name" required>
+      </md-input-container> -->
+
+    </div>
+    <br>
+    <div class="md-actions" layout="row">
+      <md-button ng-click="close()" class="md-flat md-warn">Cancel</md-button>
+      <md-button ng-click="answer" type="submit" ng-class="signupForm" class="md-flat md-primary">Sign Up</md-button>
+    </div>
+  </form>
+</md-bottom-sheet>

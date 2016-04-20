@@ -1,0 +1,33 @@
+<md-dialog class="">
+  <md-dialog-content class="md-dark">
+    <form name="CheckoutCreateForm" ng-submit="createCheckout()">
+      <h3>Add a Checkout</h3>
+      <div layout="column">
+      <img src='{{ checkout.image }}' class="profileModalPics" alt="">
+
+        <br>
+
+        <md-input-container>
+          <md-icon>photo</md-icon>
+          <input type="text" ng-model="checkout.image" placeholder="image" required>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon>label</md-icon>
+          <input type="text" ng-model="checkout.title" md-maxlength="30" placeholder="title" required>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon>comment</md-icon>
+          <textarea type="textarea" ng-model="checkout.body" md-maxlength="200" placeholder="comment" ></textarea>
+        </md-input-container>
+
+      </div>
+      <br>
+      <div class="md-actions" layout="row">
+        <md-button ng-click="close()" class="md-flat md-warn">Cancel</md-button>
+        <md-button ng-click="close()" type="submit" ng-class="CheckoutCreateForm" class="md-flat md-primary">Create</md-button>
+      </div>
+    </form>
+  </md-dialog-content>
+</md-dialog>

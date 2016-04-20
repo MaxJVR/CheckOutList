@@ -1,0 +1,224 @@
+<md-content id="landingPage" layout="row" layout-wrap>
+
+<!-- Title -->
+  <div id="titleWrapper" layout="column" layout-align="center center" layout-padding flex="100" flex-order-sm="1">
+    <br><br>
+    <h1 id="titleOne" class="themeAlt animated fadeInDown">Life is an Adventure</h1>
+
+    <h2 id="titleTwo" class="themeAlt animated fadeInLeft">What do you want to do before</h2>
+    <h2 id="titleThree" class="themeAlt animated fadeInRight">you check out of this world?</h2>
+<!--     Scroll to info panels -->
+    <md-button ng-click="scrollTo()" id="titleFour" class="md-fab md-accent md-icon-button animated fadeInUp" du-smooth-scroll="panelOne">
+      <md-icon style="color: white;">arrow_downwards</md-icon>
+    </md-button>
+  </div>
+
+<!-- Fix div for panel animation start -->
+  <div id="anchor" class="panelAniFix " flex="100" flex-order-sm="2"></div>
+
+<!-- Info panel section -->
+  <div id="panelOne" class="panelLeftAni theme fx-fade-left fx-speed-2000 fx-ease-quad" layout="column" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="3" ani-view>
+    <h1>Create Your List</h1>
+
+    <div layout="row" layout-align="center center">
+      <div flex="25">
+      <md-button class="md-fab md-warn">
+        <md-icon>add</md-icon>
+      </md-button>
+      </div>
+      <div flex="75">
+      <h3>Add the places & things <br> You wanna check out</h3>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <div flex="20">
+      <md-checkbox style="right:13px;" ng-checked="true"></md-checkbox>
+      </div>
+      <div flex="80">
+      <h3>Keep track & check <br> them all off your list</h3>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <div flex="20">
+        <md-button class="md-icon-button" style="right:35px;">
+          <md-icon class="themeAlt">more_vert</md-icon>
+        </md-button>
+      </div>
+      <div flex="80">
+        <h3>Edit or Delete <br> your CheckOuts </h3>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="panelTwo" class="panelRightAni theme fx-fade-right fx-speed-2000 fx-ease-quad" layout="row" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="4" ani-view>
+
+
+
+   <md-whiteframe style="background: url('/images/surfing.jpg'); background-size:cover;" id="checkoutExample" class="md-whiteframe-z5 themeAlt" layout="column">
+
+          <div class="themeAlt" layout="row" layout-align="space-between start" layout-padding flex="30">
+            <h2 flex="50">Surfing</h2>
+              <md-fab-speed-dial md-direction="down" class="md-fling">
+              <md-fab-trigger>
+                <md-button class="md-icon-button" aria-label="Checkouts Menu">
+                    <md-icon class="themeAlt">more_vert</md-icon>
+                  </md-button>
+                </md-fab-trigger>
+              <md-fab-actions>
+              <!-- Not Showing on mobile -->
+                <md-button class="md-icon-button" aria-label="Edit Checkout"  hide-sm>
+                  <md-tooltip md-direction="left">
+                    Edit Checkout
+                  </md-tooltip>
+                  <md-icon class="md-accent">mode_edit</md-icon>
+                </md-button>
+                <md-button  class="md-icon-button" aria-label="Delete Checkout">
+                  <md-tooltip md-direction="left">
+                    Delete Checkout
+                  </md-tooltip>
+                  <md-icon class="md-warn">cancel</md-icon>
+                </md-button>
+
+              </md-fab-actions>
+            </md-fab-speed-dial>
+
+          </div>
+
+          <div class="themeAlt" layout="row" layout-align="center center" layout-padding flex="50">
+            <h3>Looks so fun!</h3>
+          </div>
+
+          <div layout="row" layout-align="end center" flex="20">
+            <md-checkbox ngTrueValue="true" ngFalseValue="false" aria-label="checked">
+              <md-tooltip>
+                Check Checkout
+              </md-tooltip>
+            </md-checkbox>
+          </div>
+
+    </md-whiteframe>
+
+  </div>
+
+
+  <div  id="panelThree" class="panelLeftAni theme fx-fade-left fx-speed-2000 fx-ease-quad" layout="row" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="6" ani-view>
+
+    <md-whiteframe ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" style="background: url('/images/northern-lights.jpg'); background-size:cover;" class="md-whiteframe-z5 checkoutsExample" layout="column" flex="45" flex-sm="85">
+
+      <div class="themeAlt" layout="row" layout-align="start start" layout-padding flex="30">
+         <h2>Aurora Borealis</h2>
+      </div>
+
+      <div class="themeAlt" layout="row" layout-align="center center" layout-padding flex="50">
+
+      </div>
+
+      <div class="" layout="row" layout-align="end center" flex="20">
+        <md-button ng-click="copyCheckout(checkout); copyCheckoutToast()" class="md-icon-button">
+          <md-icon class="themeAlt">loyalty</md-icon>
+          <md-tooltip md-direction="left">
+            Add Checkout
+          </md-tooltip>
+        </md-button>
+      </div>
+
+    </md-whiteframe>
+
+    <md-whiteframe ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" style="background: url('/images/italy-coast.jpg'); background-size:cover;" class="md-whiteframe-z5 checkoutsExample" layout="column" flex="45" hide-sm>
+
+      <div class="themeAlt" layout="row" layout-align="start start" layout-padding flex="30">
+         <h2>Backpacking Italy</h2>
+      </div>
+
+      <div class="themeAlt" layout="row" layout-align="center center" layout-padding flex="50">
+
+      </div>
+
+      <div class="" layout="row" layout-align="end center" flex="20">
+        <md-button ng-click="copyCheckout(checkout); copyCheckoutToast()" class="md-icon-button">
+          <md-icon class="themeAlt">loyalty</md-icon>
+          <md-tooltip md-direction="left">
+            Add Checkout
+          </md-tooltip>
+        </md-button>
+      </div>
+
+    </md-whiteframe>
+  </div>
+
+  <div id="panelFour" class="panelRightAni theme fx-fade-right fx-speed-2000 fx-ease-quad" layout="column" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="5" ani-view>
+    <h1>Get Inspired</h1>
+
+    <div layout="row" layout-align="space-around center">
+      <div flex="20">
+        <md-button class="md-icon-button" style="right:13px;">
+          <md-icon class="themeAlt">public</md-icon>
+        </md-button>
+      </div>
+      <div flex="80">
+        <h3>View CheckOuts <br> created by users</h3>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="space-around center">
+      <div flex="20">
+        <md-button class="md-icon-button" style="right:12px;">
+          <md-icon class="themeAlt">loyalty</md-icon>
+        </md-button>
+      </div>
+      <div flex="80">
+        <h3>Add them to your <br> list with one click </h3>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="space-around center">
+      <div flex="20">
+        <md-button class="md-icon-button">
+          <md-icon class="themeAlt">account_circle</md-icon>
+        </md-button>
+      </div>
+      <div flex="80">
+        <h3>Go to your profile & <br> see your Checkout</h3>
+      </div>
+    </div>
+
+
+  </div>
+
+<!-- Fix div for panel animation start -->
+  <div class="panelAniFix" flex="100"></div>
+
+<!-- Signup section -->
+  <div id="signupWrapper" class="" layout="column" layout-align="center center" layout-padding flex="100"flex-order-sm="7">
+
+    <h1 class="themeAlt">What are you waiting for?</h1>
+    <h2 class="themeAlt">Create an Account</h2>
+    <h2 class="themeAlt">Plan your Adventure!</h2>
+    <md-button ng-click="showSignup()" class="md-fab md-accent themAlt" hide-sm show-gt-sm>
+      <md-icon>person_add</md-icon>
+    </md-button>
+    <md-button ng-click="openLeftMenu()" class="md-fab md-accent themAlt" hide-gt-sm show-sm>
+      <md-icon>person_add</md-icon>
+    </md-button>
+
+  </div>
+
+<!-- Social media contact buttons -->
+  <div id="signupFooter" class="" layout="row" layout-sm="column" layout-align="space-around center" layout-padding flex="100" flex-order-sm="8">
+    <h3 class="themeAlt">Created by avid adventurer <br> and Web Developer </h3>
+    <h1 class="themeAlt">Max Von Rotz</h1>
+    <div>
+      <md-button id="socialBtnFacebook" class="md-fab" href="https://www.facebook.com/MaxJVR" target="_blank"><md-icon class="zmdi zmdi-facebook-box zmdi-hc-2x"></md-icon></md-button>
+      <md-button id="socialBtnLinkedin" class="md-fab" href="https://www.linkedin.com/in/maxjvr" target="_blank"><md-icon class="zmdi zmdi-linkedin-box zmdi-hc-2x"></md-icon></md-button>
+      <md-button id="socialBtnGithub" class="md-fab" href="https://github.com/MaxJVR" target="_blank"><md-icon class="zmdi zmdi-github-box zmdi-hc-2x"></md-icon></md-button>
+    </div>
+
+  </div>
+
+</md-content>
+
+
+

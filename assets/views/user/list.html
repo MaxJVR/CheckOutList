@@ -1,0 +1,41 @@
+<md-content id="listPage">
+
+   <div layout="row" layout-align="" layout-wrap>
+
+    <div ng-repeat="checkout in allCheckouts track by $index" layout="row" flex-sm="100" flex="33" flex-lg="20" class="fx-zoom-left fx-speed-300 fx-ease-quad fx-stagger-300">
+
+        <md-whiteframe ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" style="background: url(' {{ checkout.image }} '); background-size:cover;" id="checkoutWhiteframe" class="md-whiteframe-z5 " layout="column" layout-fill>
+
+          <div class="themeAlt" layout="row" layout-align="start start" layout-padding flex="30">
+             <h1>{{ checkout.title }}</h1>
+          </div>
+
+          <div class="themeAlt" layout="row" layout-align="center center" layout-padding flex="50">
+<!--             <h3>{{ checkout.body }}</h3> -->
+          </div>
+
+          <div class="" layout="row" layout-align="end center" flex="20">
+            <md-button ng-click="copyCheckout(checkout); copyCheckoutToast()" class="md-icon-button">
+              <md-icon class="themeAlt">loyalty</md-icon>
+              <md-tooltip md-direction="left">
+                Add Checkout
+              </md-tooltip>
+            </md-button>
+          </div>
+
+        </md-whiteframe>
+
+      </div>
+
+  <!-- New Checkout Buttons -->
+    <md-button ng-click="getCheckouts()" class="md-fab md-fab-bottom-right md-warn" style="position:fixed;" aria-label="More Checkouts" id="getCheckouts">
+      <md-tooltip md-direction="left">
+       More Checkouts
+      </md-tooltip>
+      <md-icon>done</md-icon>
+    </md-button>
+
+    </div>
+  </div>
+
+</md-content>

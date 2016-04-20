@@ -1,0 +1,13 @@
+{
+  "firebase": "checkoutlist",
+  "public": "/",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ],
+    "rewrites": [ {
+    "source": "**",
+    "destination": "/index.ejs"
+  } ]
+}

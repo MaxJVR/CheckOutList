@@ -1,0 +1,100 @@
+<md-content layout="column" layout-padding id="profilePage" ng-cloak>
+<!-- User Profile -->
+  <div layout="row" layout-align="space-around center" layout-padding>
+
+      <md-whiteframe ng-click="" ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" class="md-whiteframe-z5 themeAlt" layout="row" layout-align="center center" layout-padding layout-wrap flex="66" flex-sm="100">
+
+      <div style="background: url(' {{ user.image }} '); background-size:cover;" id="profileWhiteframe" flex="33" flex-sm="100"></div>
+
+      <div layout="column" layout-align="space-around center" flex="66">
+        <h1 ng-click="userNameEdit = true" ng-hide="userNameEdit"> {{ user.userName }}</h1>
+
+        <md-input-container>
+          <input type="text" ng-model="user.userName" ng-bind="user.userName" ng-show="userNameEdit" ng-mouseleave="userNameEdit = false" required>
+        </md-input-container>
+
+        <h4 ng-click="aboutEdit = true" ng-hide="aboutEdit"> {{ user.about }} </h4>
+        <md-input-container class="md-block">
+          <textarea ng-model="user.about" ng-bind="user.about" ng-show="aboutEdit" ng-mouseleave="aboutEdit = false" md-detect-hidden>{{user.about}}</textarea>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center" flex="100">
+        <h1 ng-click="listNameEdit = true" ng-hide="listNameEdit"> {{ list.name || 'click to create your list' }} </h1>
+        <md-input-container>
+          <input type="text" ng-model="list.name" ng-bind="list.name" ng-show="listNameEdit" ng-mouseleave="listNameEdit = false" required>
+        </md-input-container>
+      </div>
+
+    </md-whiteframe>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+
+<!-- Checkouts -->
+  <div layout="row" layout-padding layout-wrap>
+
+    <div ng-repeat="checkout in checkouts track by $id(checkout)" ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" layout="column" layout-padding flex-sm="100" flex="33" flex-lg="20" class="fx-bounce-normal fx-speed-300 fx-ease-quad fx-stagger-300">
+      <div layout="row" layout-align="center center">
+
+        <md-whiteframe style="background: url(' {{ checkout.image }} '); background-size:cover;" class="md-whiteframe-z5 themeAlt profileCheckouts" layout="column">
+
+          <div class="themeAlt" layout="row" layout-align="space-between start" layout-padding flex="30">
+            <h2 flex="50">{{ checkout.title }}</h2>
+            <!-- Checkout Options -->
+              <md-fab-speed-dial md-direction="down" ng-show="hover" class="md-fling" show-sm>
+              <md-fab-trigger>
+                <md-button class="md-icon-button themeAlt" aria-label="Checkouts Menu">
+                    <md-icon style="color: white;">more_vert</md-icon>
+                  </md-button>
+                </md-fab-trigger>
+              <md-fab-actions>
+                <md-button ng-click="editCheckout(checkout)" class="md-icon-button" aria-label="Edit Checkout">
+                  <md-tooltip md-direction="left">
+                    Edit Checkout
+                  </md-tooltip>
+                  <md-icon class="md-accent">mode_edit</md-icon>
+                </md-button>
+                <md-button ng-click="deleteCheckout(checkout)" class="md-icon-button" aria-label="Delete Checkout">
+                  <md-tooltip md-direction="left">
+                    Delete Checkout
+                  </md-tooltip>
+                  <md-icon class="md-warn">cancel</md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>
+
+          </div>
+
+          <div class="themeAlt" ng-click="" layout="row" layout-align="center center" layout-padding flex="50">
+            <h3 ng-show="hover">{{ checkout.body }}</h3>
+          </div>
+
+
+          <div layout="row" layout-align="end center" flex="20">
+
+            <md-checkbox ng-show="hover || checkout.checked == true" ng-click="checkCheckout(checkout)" ng-model="checkout.checked" ngTrueValue="checkout.checked" ngFalseValue="checkout.checked" aria-label="checked">
+              <md-tooltip>
+                Check Checkout
+              </md-tooltip>
+            </md-checkbox>
+
+          </div>
+
+        </md-whiteframe>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- New Checkout Buttons -->
+    <md-button ng-click="addCheckout()" class="md-fab md-fab-bottom-right md-warn" style="position:fixed;" aria-label="New Checkout" id="addCheckout">
+      <md-tooltip md-direction="left">
+       New Checkout
+      </md-tooltip>
+      <md-icon>add</md-icon>
+    </md-button>
+
+
+</md-content>

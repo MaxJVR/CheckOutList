@@ -1,0 +1,19 @@
+<md-bottom-sheet class="md-list">
+  <form name="loginForm" ng-submit="login()">
+    <div layout="column">
+      <h3>Enter Your Login Info</h3>
+      <md-input-container>
+        <md-icon>email</md-icon>
+        <input type="email" ng-model="email" placeholder="Email" required>
+      </md-input-container>
+      <md-input-container>
+        <md-icon>vpn_key</md-icon>
+        <input type="password" ng-model="password" placeholder="Password" required>
+      </md-input-container>
+    </div>
+    <div class="md-actions" layout="row">
+      <md-button ng-click="shut()" class="md-flat md-warn">Cancel</md-button>
+      <md-button type="submit" ng-class="loginForm" class="md-flat md-primary">Login</md-button>
+    </div>
+  </form>
+</md-bottom-sheet>

@@ -1,0 +1,15 @@
+<md-bottom-sheet class="md-list">
+     <form name="createListForm" ng-submit="createList()">
+      <h3>Create Your List</h3>
+      <div layout="row">
+        <md-input-container>
+          <label>Name</label>
+          <input type="text" ng-model="list.name" md-maxlength="" required>
+        </md-input-container>
+      </div>
+    <div class="md-actions" layout="row">
+      <md-button ng-click="cancel()" class="md-flat md-warn">Cancel</md-button>
+      <md-button ng-click="close()" type="submit" ng-class="createListForm" class="md-flat md-primary">Submit</md-button>
+    </div>
+  </form>
+</md-bottom-sheet>

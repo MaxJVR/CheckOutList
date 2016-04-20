@@ -1,0 +1,26 @@
+<md-bottom-sheet class="md-list">
+  <form name="CheckoutUpdateForm" ng-submit="updateCheckout()">
+    <div layout="column">
+
+      <md-input-container>
+        <md-icon>photo</md-icon>
+        <input type="text" ng-model="newCheckout.image" placeholder="Image" required>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon>label</md-icon>
+        <input type="text" ng-model="newCheckout.title" md-maxlength="20" placeholder="Title" required>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon>comment</md-icon>
+        <textarea type="textarea" ng-model="newCheckout.body" md-maxlength="200" placeholder="Content" required></textarea>
+      </md-input-container>
+
+    </div>
+    <div class="md-actions" layout="row">
+      <md-button ng-click="close()" class="md-flat md-warn">Cancel</md-button>
+      <md-button ng-click="" type="submit" ng-class="CheckoutUpdateForm" class="md-flat md-primary">Create</md-button>
+    </div>
+  </form>
+</md-bottom-sheet>

@@ -1,0 +1,66 @@
+<md-dialog>
+ <md-dialog-content class="md-dark">
+    <form name="CheckoutUpdateForm" ng-submit="updateCheckout()">
+      <h3>Add a Checkout</h3>
+      <div layout="column">
+      <img src='{{ newCheckout.image }}' class="profileModalPics" alt="">
+
+        <md-input-container>
+          <md-icon>photo</md-icon>
+          <input type="text" ng-model="newCheckout.image"  required>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon>label</md-icon>
+          <input type="text" ng-model="newCheckout.title" md-maxlength="30" required>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon>comment</md-icon>
+          <textarea type="textarea" ng-model="newCheckout.body" md-maxlength="200"></textarea>
+        </md-input-container>
+
+      </div>
+      <br>
+      <div class="md-actions" layout="row">
+        <md-button ng-click="close()" class="md-flat md-warn">Cancel</md-button>
+        <md-button ng-click="" type="submit" ng-class="CheckoutUpdateForm" class="md-flat md-primary">Create</md-button>
+      </div>
+    </form>
+  </md-dialog-content>
+</md-dialog>
+
+
+<!-- <md-dialog class="">
+  <md-dialog-content> -->
+<!--       <form name="CheckoutUpdateForm" ng-submit="updateCheckout()">
+        <md-card class="">
+
+         <img src='{{ editCheckout.image }}' class="md-card-image" alt="image caption">
+         <md-card-content>
+
+          <md-input-container>
+            <md-icon>photo</md-icon>
+            <input type="text" ng-model="newCheckout.image" placeholder="{{editCheckout.image}}">
+          </md-input-container>
+
+          <md-input-container>
+            <md-icon>label</md-icon>
+            <input type="text" ng-model="newCheckout.title" placeholder="{{ editCheckout.title }}" required>
+          </md-input-container>
+
+          <md-input-container>
+            <md-icon>comment</md-icon>
+            <textarea type="textarea" ng-model="newCheckout.body" md-maxlength="200" placeholder="{{ editCheckout.body }}" required></textarea>
+          </md-input-container>
+
+         </md-card-content>
+         <md-card-footer>
+          <md-button ng-click="close()" class="md-flat md-warn">Cancel</md-button>
+          <md-button ng-click="" type="submit" ng-class="CheckoutUpdateForm" class="md-flat md-primary">Create</md-button>
+         </md-card-footer>
+        </md-card>
+      </form> -->
+<!--
+  </md-dialog-content>
+</md-dialog> -->
