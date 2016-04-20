@@ -16,7 +16,7 @@ function($scope,$rootScope,$window,$location,$mdDialog,$mdBottomSheet,$mdSidenav
   //User login modal call
   $scope.showLogin = function  () {
     $mdDialog.show({
-      templateUrl:'/views/auth/loginModal.html',
+      templateUrl:'/views/auth/LoginModal.html',
       controller:'AuthLoginModalCtrl'
     });
   };
@@ -24,7 +24,7 @@ function($scope,$rootScope,$window,$location,$mdDialog,$mdBottomSheet,$mdSidenav
   //User login on mobile device
    $scope.showBottomSheet = function() {
     $mdBottomSheet.show({
-      templateUrl:'/views/auth/loginBottomSheet.html',
+      templateUrl:'/views/auth/LoginBottomSheet.html',
       controller:'AuthLoginModalCtrl',
     });
   };
