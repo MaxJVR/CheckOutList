@@ -2,13 +2,11 @@
 
 <!-- Title -->
   <div id="titleWrapper" layout="column" layout-align="center center" layout-padding flex="100" flex-order-sm="1">
-    <br><br>
     <h1 id="titleOne" class="themeAlt animated fadeInDown">Life is an Adventure</h1>
-
     <h2 id="titleTwo" class="themeAlt animated fadeInLeft">What do you want to do before</h2>
     <h2 id="titleThree" class="themeAlt animated fadeInRight">you check out of this world?</h2>
 <!--     Scroll to info panels -->
-    <md-button ng-click="scrollTo()" id="titleFour" class="md-fab md-accent md-icon-button animated fadeInUp" du-smooth-scroll="panelOne">
+    <md-button ng-click="scrollToAnchor()" id="titleFour" class="md-fab md-accent md-icon-button animated fadeInUp" du-smooth-scroll="panelOne">
       <md-icon style="color: white;">arrow_downwards</md-icon>
     </md-button>
   </div>
@@ -17,7 +15,7 @@
   <div id="anchor" class="panelAniFix " flex="100" flex-order-sm="2"></div>
 
 <!-- Info panel section -->
-  <div id="panelOne" class="panelLeftAni theme fx-fade-left fx-speed-2000 fx-ease-quad" layout="column" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="3" ani-view>
+  <div id="panelOne" class="panelLeftAni theme fx-fade-left fx-speed-2000 fx-ease-quad" layout="column" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="3" >
     <h1>Create Your List</h1>
 
     <div layout="row" layout-align="center center">
@@ -53,7 +51,7 @@
 
   </div>
 
-  <div id="panelTwo" class="panelRightAni theme fx-fade-right fx-speed-2000 fx-ease-quad" layout="row" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="4" ani-view>
+  <div id="panelTwo" class="panelRightAni theme fx-fade-right fx-speed-2000 fx-ease-quad" layout="row" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="4" >
 
 
 
@@ -104,7 +102,7 @@
   </div>
 
 
-  <div  id="panelThree" class="panelLeftAni theme fx-fade-left fx-speed-2000 fx-ease-quad" layout="row" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="6" ani-view>
+  <div  id="panelThree" class="panelLeftAni theme fx-fade-left fx-speed-2000 fx-ease-quad" layout="row" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="6" >
 
     <md-whiteframe ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" style="background: url('/images/northern-lights.jpg'); background-size:cover;" class="md-whiteframe-z5 checkoutsExample" layout="column" flex="45" flex-sm="85">
 
@@ -149,7 +147,7 @@
     </md-whiteframe>
   </div>
 
-  <div id="panelFour" class="panelRightAni theme fx-fade-right fx-speed-2000 fx-ease-quad" layout="column" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="5" ani-view>
+  <div id="panelFour" class="panelRightAni theme fx-fade-right fx-speed-2000 fx-ease-quad" layout="column" layout-align="center center" flex="50" flex-sm="100" flex-order-sm="5" >
     <h1>Get Inspired</h1>
 
     <div layout="row" layout-align="space-around center">
@@ -198,10 +196,10 @@
     <h2 class="themeAlt">Create an Account</h2>
     <h2 class="themeAlt">Plan your Adventure!</h2>
     <md-button ng-click="showSignup()" class="md-fab md-accent themAlt" hide-sm show-gt-sm>
-      <md-icon>person_add</md-icon>
+      <md-icon style="color: white;">person_add</md-icon>
     </md-button>
-    <md-button ng-click="openLeftMenu()" class="md-fab md-accent themAlt" hide-gt-sm show-sm>
-      <md-icon>person_add</md-icon>
+    <md-button ng-click="showSignupMobile()" class="md-fab md-accent themAlt" hide-gt-sm show-sm>
+      <md-icon style="color: white;">person_add</md-icon>
     </md-button>
 
   </div>

@@ -37,7 +37,7 @@
     <div ng-repeat="checkout in checkouts track by $id(checkout)" ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" layout="column" layout-padding flex-sm="100" flex="33" flex-lg="20" class="fx-bounce-normal fx-speed-300 fx-ease-quad fx-stagger-300">
       <div layout="row" layout-align="center center">
 
-        <md-whiteframe style="background: url(' {{ checkout.image }} '); background-size:cover;" class="md-whiteframe-z5 themeAlt profileCheckouts" layout="column">
+        <md-whiteframe style="background: url(' {{ checkout.image }} '); background-size:cover;" id="checkoutWhiteframe"class="md-whiteframe-z5 themeAlt profileCheckouts" layout="column">
 
           <div class="themeAlt" layout="row" layout-align="space-between start" layout-padding flex="30">
             <h2 flex="50">{{ checkout.title }}</h2>
@@ -95,6 +95,13 @@
       </md-tooltip>
       <md-icon>add</md-icon>
     </md-button>
+
+<!--     <md-button ng-click="addCheckoutMobile()" class="md-fab md-fab-bottom-right md-warn" style="position:fixed;" aria-label="New Checkout" id="addCheckoutMobile" hide-gt-sm show-sm>
+      <md-tooltip md-direction="left">
+       New Checkout
+      </md-tooltip>
+      <md-icon>add</md-icon>
+    </md-button> -->
 
 
 </md-content>

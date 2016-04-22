@@ -2,7 +2,7 @@ VacationApp.controller('CheckoutCreateModalCtrl', ['$scope','$rootScope','$mdDia
   function($scope,$rootScope,$mdDialog,$mdBottomSheet,$firebase,$firebaseObject,$firebaseArray,CurrentUser,List,Checkout,UserList,listId){
     console.log('CheckoutCreateModalCtrl running');
 
-    console.log(listId);
+    // console.log(listId);
     var db = $firebase.child('checkouts');
     var checkout = $firebaseArray(db)
 

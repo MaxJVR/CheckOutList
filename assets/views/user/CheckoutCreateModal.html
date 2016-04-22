@@ -1,15 +1,15 @@
 <md-dialog class="">
   <md-dialog-content class="md-dark">
     <form name="CheckoutCreateForm" ng-submit="createCheckout()">
-      <h3>Add a Checkout</h3>
-      <div layout="column">
-      <img src='{{ checkout.image }}' class="profileModalPics" alt="">
+      <div layout="column" layout-align="center center">
+        <h3>Add a Checkout</h3>
+        <img src='{{ checkout.image }}' class="profileModalPics" alt="">
 
         <br>
 
         <md-input-container>
           <md-icon>photo</md-icon>
-          <input type="text" ng-model="checkout.image" placeholder="image" required>
+          <input type="text" ng-model="checkout.image" placeholder="image URL" required>
         </md-input-container>
 
         <md-input-container>

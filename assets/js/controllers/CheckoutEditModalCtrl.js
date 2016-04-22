@@ -3,7 +3,7 @@ function($scope,$http,$rootScope,$mdDialog,$mdBottomSheet,CurrentUser,User,List,
   console.log('CheckoutEditModalCtrl running');
 
   $scope.editCheckout = editCheckout
-  console.log(editCheckout)
+  // console.log(editCheckout)
   var checkoutId = editCheckout.$id
 
   //Checkout 3 way data bind

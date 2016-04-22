@@ -8,12 +8,13 @@ function($scope,$http,$rootScope,$mdToast,$firebase,$firebaseArray,CurrentAuth,U
   var db = $firebase.child('checkouts');
   var checkouts = $firebaseArray(db);
   var showCheckouts = [];
+  var listId = '';
 
   //GET 21 Checkouts that do no belong to CurrentUser then shuffle them before display
   CurrentUser(CurrentAuth).$loaded().then(function (user) {
-    var listId = user.userList;
+    listId = user.userList;
     checkouts.$loaded().then(function (checkouts) {
-      console.log(listId);
+      // console.log(listId);
      var shuffledCheckouts = shuffleArray(checkouts);
 
       shuffledCheckouts.forEach(function(checkout){
@@ -48,8 +49,7 @@ function($scope,$http,$rootScope,$mdToast,$firebase,$firebaseArray,CurrentAuth,U
   // POST call to add this as new checkout and add to UsersList
   $scope.copyCheckout = function  (checkout) {
     console.log(checkout);
-    var addCheckout = $firebaseArray(db)
-    var listId = CurrentUser.userList;
+    var addCheckout = $firebaseArray(db);
     addCheckout.$add({
       title: checkout.title,
       body: checkout.body,
@@ -57,10 +57,9 @@ function($scope,$http,$rootScope,$mdToast,$firebase,$firebaseArray,CurrentAuth,U
       checked: false,
       checkoutList: listId
     }).then(function (checkout) {
-      console.log(checkout);
+      // console.log(checkout);
       var checkoutId = checkout.key();
-      console.log(checkoutId);
-
+      // console.log(checkoutId);
       $firebase.child('lists').child(listId).child('listCheckouts').child(checkoutId).set({
         checkout: true
       });
@@ -75,7 +74,7 @@ function($scope,$http,$rootScope,$mdToast,$firebase,$firebaseArray,CurrentAuth,U
   //Call to display more checkouts
   $scope.getCheckouts = function () {
     //Total # of checkouts to be added
-    var totalCheckouts = 21;
+    var totalCheckouts = 6;
     //Filters new checkouts
     filterCheckouts = function (checkout) {
       // console.log(checkout);

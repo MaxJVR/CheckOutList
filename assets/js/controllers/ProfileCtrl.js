@@ -13,12 +13,12 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
   //User and List three way data bind
   CurrentUser(CurrentAuth).$bindTo($scope, 'user').then(function () {
     listId = $scope.user.userList;
-    console.log(listId);
+    // console.log(listId);
     UserList(listId).$bindTo($scope, 'list').then(function () {
       console.log($scope.list);
     }).then(function () {
       $scope.checkouts = ListCheckout(listId)
-      console.log($scope.checkouts);
+      // console.log($scope.checkouts);
       $rootScope.loading = false;
     });
   });
@@ -67,12 +67,13 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
     });
   };
 
+  //NOT WORKING SAVED UNTIL BUG FIX
   //User add Checkout BottomSheet call
   $scope.addCheckoutMobile = function  () {
    $mdBottomSheet.show({
       templateUrl:'/views/user/CheckoutCreateBottomSheet.html',
       controller:'CheckoutCreateModalCtrl',
-      locals: { listId: listId  },
+      locals: { listId: listId  }
     });
   };
 
@@ -100,7 +101,7 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
 
   //Checkout Delete
   $scope.deleteCheckout = function  (checkout) {
-    console.log(checkout);
+    // console.log(checkout);
     var checkoutId = checkout.$id;
     Checkout(checkoutId).$remove();
     var db = $firebase.child('lists').child(listId).child('listCheckouts').child(checkoutId);
@@ -112,10 +113,10 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
   $scope.checkCheckout = function  (checkout) {
 
     var checkoutId = checkout.$id;
-    console.log(checkoutId);
+    // console.log(checkoutId);
 
     Checkout(checkoutId).$loaded().then(function (checkoutCheck) {
-        console.log(checkoutCheck);
+        // console.log(checkoutCheck);
           if (checkoutCheck.checked == false) {
             checkoutCheck.checked = true;
             checkoutCheck.$save();
