@@ -8,8 +8,7 @@ body {
 }
 
 #titleWrapper {
-/*  background-image: url('/images/starry-sky.gif');*/
-  background-image: url('http://cdn.pcwallart.com/images/star-night-wallpaper-wallpaper-2.jpg');
+  background-image: url('/images/star-night.jpg');
   background-size: cover;
   height: 100vh;
 }
@@ -92,8 +91,7 @@ background-color: #ECEFF1;
 }
 
 #signupWrapper{
-/*  background-image: url('/images/ocean-fly-by.gif');*/
-  background-image: url('http://download.1wallpaper.net/20150125/old-map-parchment-compass-rope-1920x1080.jpg');
+  background-image: url('/images/old-map.jpg');
   background-size: cover;
   height: 100vh;
   text-align: center;
