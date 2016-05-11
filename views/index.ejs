@@ -40,7 +40,7 @@
       <md-list ng-show="currentUser" id="sideNavProfile">
          <br><br>
         <md-list-item class="md-2-line">
-          <img ng-src="{{ currentUser.image }}" class="md-avatar">
+          <img ng-src="{{ currentUser.image || '/images/avatar.png' }}" class="md-avatar">
           <div class="md-list-item-text">
             <h3>{{ currentUser.userName }}</h3>
             <h4>{{ currentUser.email }}</h4>

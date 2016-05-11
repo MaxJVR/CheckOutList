@@ -14,13 +14,32 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
   CurrentUser(CurrentAuth).$bindTo($scope, 'user').then(function () {
     listId = $scope.user.userList;
     // console.log(listId);
-    UserList(listId).$bindTo($scope, 'list').then(function () {
-      console.log($scope.list);
-    }).then(function () {
-      $scope.checkouts = ListCheckout(listId)
-      // console.log($scope.checkouts);
-      $rootScope.loading = false;
-    });
+    if(listId) {
+      UserList(listId).$bindTo($scope, 'list').then(function () {
+        console.log($scope.list);
+      }).then(function () {
+        $scope.checkouts = ListCheckout(listId)
+        // console.log($scope.checkouts);
+        $rootScope.loading = false;
+      });
+    }else{
+       List.$add({
+        name: 'list name',
+        listUser: $scope.user.$id
+      }).then(function (ref) {
+        listId = ref.key();
+        console.log(listId);
+        $scope.user.userList = listId;
+          // CurrentUser.$save();
+        UserList(listId).$bindTo($scope, 'list').then(function () {
+        console.log($scope.list);
+        }).then(function () {
+          $scope.checkouts = ListCheckout(listId)
+          // console.log($scope.checkouts);
+          $rootScope.loading = false;
+        });
+      });
+    }
   });
 
   //User edit modal call

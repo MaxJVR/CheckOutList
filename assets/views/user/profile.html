@@ -2,7 +2,51 @@
 <!-- User Profile -->
   <div layout="row" layout-align="space-around center" layout-padding>
 
-      <md-whiteframe ng-click="" ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" class="md-whiteframe-z5 themeAlt" layout="row" layout-align="center center" layout-padding layout-wrap flex="66" flex-sm="100">
+    <md-whiteframe ng-click="userEdit = true" ng-mouseleave="userEdit = false;" id="profileWhiteframe"class="md-whiteframe-z5  themeAlt" layout="row" layout-padding layout-wrap flex="66" flex-sm="100">
+
+    <div layout="row" layout-align="center" flex="50" flex-sm="100">
+
+        <div style="background: url(' {{ user.image || '/images/avatar.png' }} '); background-size:cover;" id="profilePic" layout="column" layout-align="end center" flex="75">
+        </div>
+    </div>
+
+    <div layout="row" layout-align="center" flex="50" flex-sm="100">
+
+      <div layout="column" layout-align="center center">
+
+        <h1 ng-hide="userEdit"> {{ user.userName }}</h1>
+        <md-input-container ng-show="userEdit">
+          <md-icon class="themeAlt">account_circle</md-icon>
+          <input placeholder="username" type="text" ng-model="user.userName" ng-bind="user.userName" required>
+        </md-input-container>
+
+        <h4 ng-hide="userEdit"> {{ user.about }} </h4>
+        <md-input-container ng-show="userEdit">
+          <md-icon class="themeAlt">comment</md-icon>
+          <textarea placeholder="about me" ng-model="user.about" ng-bind="user.about" md-detect-hidden>{{user.about}}</textarea>
+        </md-input-container>
+
+        <md-input-container ng-show="userEdit">
+          <md-icon class="themeAlt">photo</md-icon>
+          <input placeholder="image URL" type="text" ng-model="user.image" ng-bind="user.image">
+        </md-input-container>
+
+      </div>
+
+    </div>
+
+    <div layout="row" layout-align="center center" flex="100">
+        <h1 ng-hide="userEdit"> {{ list.name || 'click to create your list & edit your profile' }} </h1>
+        <md-input-container ng-show="userEdit">
+          <md-icon class="themeAlt">label</md-icon>
+          <input type="text" placeholder="list name" ng-model="list.name" ng-bind="list.name" required>
+        </md-input-container>
+    </div>
+
+
+    </md-whiteframe>
+
+<!--       <md-whiteframe ng-click="" ng-mouseenter="hover=true;" ng-mouseleave="hover=false;" class="md-whiteframe-z5 themeAlt" layout="row" layout-align="center center" layout-padding layout-wrap flex="66" flex-sm="100">
 
       <div style="background: url(' {{ user.image }} '); background-size:cover;" id="profileWhiteframe" flex="33" flex-sm="100"></div>
 
@@ -25,7 +69,7 @@
         </md-input-container>
       </div>
 
-    </md-whiteframe>
+    </md-whiteframe> -->
     </div>
 
     <br>
