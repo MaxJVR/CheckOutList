@@ -16,7 +16,7 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
     // console.log(listId);
     if(listId) {
       UserList(listId).$bindTo($scope, 'list').then(function () {
-        console.log($scope.list);
+        // console.log($scope.list);
       }).then(function () {
         $scope.checkouts = ListCheckout(listId)
         // console.log($scope.checkouts);
@@ -28,7 +28,7 @@ function($scope,$http,$location,$rootScope,$mdToast,$mdDialog,$mdBottomSheet,$fi
         listUser: $scope.user.$id
       }).then(function (ref) {
         listId = ref.key();
-        console.log(listId);
+        // console.log(listId);
         $scope.user.userList = listId;
           // CurrentUser.$save();
         UserList(listId).$bindTo($scope, 'list').then(function () {
